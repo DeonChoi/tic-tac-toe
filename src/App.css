@@ -1,15 +1,102 @@
 .App {
   text-align: center;
   height: 100vh;
+  background-image: url('./images/background.jpg');
+  background-size: 100% 100%;
+  padding-top: 5%;
 }
 
 
-.box {
+[box-id] {
   height: 200px;
-  width: 100px;
-  border: 2px black solid;
+  width: 200px;
+  border: 3px white solid;
   display: flex;
-  font-size: 100px;
+  font-size: 150px;
   justify-content: center;
   align-items: center;
+  color: white;
+}
+
+/* INDIVIDUAL BOXES */
+.top-left {
+  border-top: none;
+  border-left: none;
+}
+.top-middle {
+  border-top: none;
+}
+.top-right {
+  border-top: none;
+  border-right: none;
+}
+.middle-left {
+  border-left: none;
+}
+.middle-right {
+  border-right: none;
+}
+.bottom-left {
+  border-bottom: none;
+  border-left: none;
+}
+.bottom-middle {
+  border-bottom: none;
+}
+.bottom-right {
+  border-bottom: none;
+  border-right: none;
+}
+
+.turn-indicator {
+  font-size: 75px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
+.result-indicator {
+  font-size: 75px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
+
+.btn {
+  width: 200px;
+  height: 100px;
+  font-size: 40px;
+}
+
+[disabled] {
+  pointer-events: none;
+}
+
+/* [flash='yesFlash'] {
+  color: red;
+	-webkit-animation: flash linear 1s 3;
+	animation: flash linear 1s 3;
+}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+} */
+
+[flash='yesFlash'] {
+  animation-name: flash;
+   animation-duration: .2s;
+   animation-timing-function: linear;
+   animation-iteration-count: 8;
+   animation-direction: alternate;
+   animation-play-state: running;
+}
+
+@keyframes flash {
+   from {background-color: red; color: black;}
+   to {background-color: black; color: red;}
 }
