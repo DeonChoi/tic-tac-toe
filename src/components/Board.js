@@ -143,10 +143,9 @@ class Board extends React.Component {
 
 
         return (
-            <div className='container'>
-                
-                <div className='row board' flash={ this.state.boxFlashRed ? 'yesFlash' : 'noFlash' } disabled={this.state.disabled}>
 
+            <div className='container'>
+                <div className='row board' flash={ this.state.boxFlashRed ? 'yesFlash' : 'noFlash' } disabled={this.state.disabled}>
                     <div className='col-4 top-left' box-id='1' ref='box1' onClick={ (e)=>this.changeTurn(e.target)} /> 
                     <div className='col-4 top-middle' box-id='2' ref='box2' onClick={ (e)=>this.changeTurn(e.target)} /> 
                     <div className='col-4 top-right' box-id='3' ref='box3' onClick={ (e)=>this.changeTurn(e.target)} /> 
@@ -156,32 +155,24 @@ class Board extends React.Component {
                     <div className='col-4 bottom-left' box-id='7' ref='box7' onClick={ (e)=>this.changeTurn(e.target)} /> 
                     <div className='col-4 bottom-middle' box-id='8' ref='box8' onClick={ (e)=>this.changeTurn(e.target)} />
                     <div className='col-4 bottom-right' box-id='9' ref='box9' onClick={ (e)=>this.changeTurn(e.target)} />        
-
                 </div>
-
                 <div className='row turn-indicator'>
-
                     <div className='col-3'>
                         Turn: {this.state.turn === 'cross' ? 'X' : 'O'}
                     </div>
-
                     <div className='col-3 offset-6'>
                         <button type='button' className='btn btn-primary' onClick={this.gameReset}>Reset Game</button>
                     </div>
-
                 </div>
-
                 <div className='row result-indicator'>
-
                     <div>
                         {this.state.draw === true ? 'Game Over! Draw!' : ''}  
                         {this.state.xWin === true ? 'Game Over! X Wins!' : ''}  
                         {this.state.oWin === true ? 'Game Over! O Wins!' : ''}               
                     </div>
-
                 </div>
-
             </div>
+
         );
     }
 }
